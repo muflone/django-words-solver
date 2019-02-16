@@ -18,4 +18,5 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
+from .api_status import APIStatusView                             # noqa: F401
 from .api_versions import APIVersionsView                         # noqa: F401
