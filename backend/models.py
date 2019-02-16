@@ -1,6 +1,6 @@
 ##
 #     Project: Django Words Solver Backend
-# Description: A Django application to offer solutions to Words Solver Android app
+# Description: Django backend for Words Solver Android app
 #      Author: Fabio Castelli (Muflone) <muflone@muflone.com>
 #   Copyright: 2019 Fabio Castelli
 #     License: GPL-2+
