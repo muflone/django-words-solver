@@ -18,7 +18,7 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
@@ -26,13 +26,16 @@ from . import views
 urlpatterns = []
 
 # Version page
-urlpatterns.append(url(r'^versions/$', views.APIVersionsView.as_view(),
+urlpatterns.append(path('versions/',
+                        views.APIVersionsView.as_view(),
                    name='api/versions'))
 
 # Status page
-urlpatterns.append(url(r'^status/$', views.APIStatusView.as_view(),
+urlpatterns.append(path('status/',
+                        views.APIStatusView.as_view(),
                    name='api/status'))
 
 # Default route
-urlpatterns.append(url('', views.APIVersionsView.as_view(),
+urlpatterns.append(path('',
+                        views.APIVersionsView.as_view(),
                    name='api/default'))
