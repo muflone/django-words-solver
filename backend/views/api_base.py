@@ -18,8 +18,19 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
-from django.urls import path, include
+import json_views.views
 
 
-urlpatterns = []
-urlpatterns.append(path('backend/', include('backend.urls')))
+class APIBaseView(json_views.views.JSONDataView):
+    login_required = True
+    device = None
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.login_required:
+            if True:
+                self.device = None
+        # Remove password from context
+        context.pop('password', None)
+
+        return context

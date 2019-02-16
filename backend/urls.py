@@ -18,8 +18,13 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
-from django.urls import path, include
+from django.conf.urls import url
+
+from . import views
 
 
 urlpatterns = []
-urlpatterns.append(path('backend/', include('backend.urls')))
+
+# Version page
+urlpatterns.append(url(r'^versions/$', views.APIVersionsView.as_view(),
+                   name='api/versions'))

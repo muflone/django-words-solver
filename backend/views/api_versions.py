@@ -18,8 +18,27 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
-from django.urls import path, include
+import sys
+
+import django
+
+import json_views
+
+import project
+
+from .api_base import APIBaseView
 
 
-urlpatterns = []
-urlpatterns.append(path('backend/', include('backend.urls')))
+class APIVersionsView(APIBaseView):
+    login_required = False
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['version'] = project.VERSION
+        context['python version'] = sys.version
+        context['python version info'] = sys.version_info
+        context['django version'] = django.__version__
+        context['django version info'] = django.VERSION
+        context['json_views version'] = json_views.__version__
+        context['json_views version info'] = json_views.__version_info__
+        return context
