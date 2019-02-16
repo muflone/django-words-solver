@@ -26,5 +26,7 @@ from . import views
 urlpatterns = []
 
 # Version page
+urlpatterns.append(url('', views.APIVersionsView.as_view(),
+                   name='api/versions'))
 urlpatterns.append(url(r'^versions/$', views.APIVersionsView.as_view(),
                    name='api/versions'))
