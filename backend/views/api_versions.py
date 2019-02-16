@@ -18,6 +18,7 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
+import sqlite3
 import sys
 
 import django
@@ -37,6 +38,10 @@ class APIVersionsView(APIBaseView):
         context['version'] = project.VERSION
         context['python version'] = sys.version
         context['python version info'] = sys.version_info
+        context['sqlite version'] = sqlite3.sqlite_version
+        context['sqlite version info'] = sqlite3.sqlite_version_info
+        context['sqlite3 version'] = sqlite3.version
+        context['sqlite3 version info'] = sqlite3.version_info
         context['django version'] = django.__version__
         context['django version info'] = django.VERSION
         context['json_views version'] = json_views.__version__
