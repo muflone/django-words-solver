@@ -35,6 +35,15 @@ urlpatterns.append(path('status/',
                         views.APIStatusView.as_view(),
                    name='api/status'))
 
+# Permutations page
+urlpatterns.append(path('permutations/'
+                        '<int:device>/'
+                        '<int:password>/'
+                        '<slug:letters>/'
+                        '<int:length>/',
+                        views.APIPermutationsView.as_view(),
+                   name='api/permutations'))
+
 # Default route
 urlpatterns.append(path('',
                         views.APIVersionsView.as_view(),

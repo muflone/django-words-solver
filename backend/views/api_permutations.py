@@ -18,6 +18,18 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
-from .api_permutations import APIPermutationsView                 # noqa: F401
-from .api_status import APIStatusView                             # noqa: F401
-from .api_versions import APIVersionsView                         # noqa: F401
+import itertools
+
+from .api_base import APIBaseView
+
+
+class APIPermutationsView(APIBaseView):
+    login_required = True
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['results'] = [''.join(word) for word
+                              in set(itertools.permutations(
+                                iterable=kwargs['letters'],
+                                r=kwargs['length']))]
+        return context
