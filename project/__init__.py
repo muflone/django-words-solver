@@ -19,3 +19,4 @@
 ##
 
 VERSION = '0.2.0'
+PRODUCT_NAME = 'Django Words Solver Backend'
