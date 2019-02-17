@@ -18,5 +18,5 @@
 #  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
 ##
 
-VERSION = '0.2.1'
+VERSION = '0.3.0'
 PRODUCT_NAME = 'Django Words Solver Backend'
