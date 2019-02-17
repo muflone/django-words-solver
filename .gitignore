@@ -3,3 +3,4 @@ __pycache__/
 /static/
 /uploads/
 /project/settings_development.py
+/dictionaries/*.dict
