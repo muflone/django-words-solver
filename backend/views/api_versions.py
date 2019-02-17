@@ -34,6 +34,7 @@ class APIVersionsView(APIBaseView):
     login_required = False
 
     def get_context_data(self, **kwargs):
+        """Returns the versions"""
         context = super().get_context_data(**kwargs)
         context['version'] = project.VERSION
         context['python version'] = sys.version

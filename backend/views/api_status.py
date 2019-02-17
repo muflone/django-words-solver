@@ -33,6 +33,7 @@ class APIStatusView(APIBaseView):
     login_required = False
 
     def get_context_data(self, **kwargs):
+        """Returns the system status"""
         context = super().get_context_data(**kwargs)
         context['status'] = 'up'
         # Return product data

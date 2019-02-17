@@ -27,6 +27,7 @@ class APIPermutationsView(APIBaseView):
     login_required = True
 
     def get_context_data(self, **kwargs):
+        """Returns the permutations of a word of a known length"""
         context = super().get_context_data(**kwargs)
         context['results'] = [''.join(word) for word
                               in set(itertools.permutations(
