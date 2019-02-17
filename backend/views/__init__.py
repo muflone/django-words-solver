@@ -19,5 +19,6 @@
 ##
 
 from .api_permutations import APIPermutationsView                 # noqa: F401
+from .api_matches import APIMatchesView                           # noqa: F401
 from .api_status import APIStatusView                             # noqa: F401
 from .api_versions import APIVersionsView                         # noqa: F401

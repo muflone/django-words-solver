@@ -44,6 +44,16 @@ urlpatterns.append(path('permutations/'
                         views.APIPermutationsView.as_view(),
                    name='api/permutations'))
 
+# Matches page
+urlpatterns.append(path('matches/'
+                        '<int:device>/'
+                        '<int:password>/'
+                        '<slug:dictionary>/'
+                        '<slug:letters>/'
+                        '<int:length>/',
+                        views.APIMatchesView.as_view(),
+                   name='api/matches'))
+
 # Default route
 urlpatterns.append(path('',
                         views.APIVersionsView.as_view(),
